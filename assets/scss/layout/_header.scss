@@ -1,0 +1,257 @@
+header{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    .group-header{
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        padding: 36px 0 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 200;
+        transition: 0.8s; 
+        color: #FFFFF3;
+
+        @include mobile-small{
+            position: inherit;
+        }
+        
+
+        &.active{
+            opacity: 1;
+            visibility: visible;
+            padding: 18px 0;
+            background: #06c755;
+            box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+            will-change: transform;
+            z-index: 200;
+        }
+
+        &.hide{
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    
+    .logo{margin-left: 50px;
+    
+        a{display: block;
+            flex-shrink: 0;
+            margin-right: 56px;
+            img{
+                width: 100%; height: 100%;
+            }
+        }
+    }
+    
+    .group-left{display: flex; align-items: center; margin-right: 50px;
+
+        .nav-area{
+            margin-right: 56px;
+            @include tablet{
+                display: none;
+            }
+        }
+        .link-nav{font-weight: 500; 
+            &+.link-nav{margin-left: 35px;}
+
+            &:hover{
+                opacity: 0.7;
+             }
+        }
+    
+        .btn-menu{   
+    
+            .line{position: relative;
+                display: block;
+                width: 32px;
+                height: 3px;
+                overflow: hidden;
+                will-change: transform;
+                background: #fff;
+
+                .active &{
+                    &.one{transform: translate(0px, 5px) rotate(45deg);}
+                    &.two{transform: translate(0px, -5px) rotate(-45deg);}
+                }
+    
+                &.two{margin-top: 8px;}
+            }
+        }
+    }
+    
+    .group-menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        width: 100%;
+        height: 100vh;
+        transition: 0.3s;
+        visibility: hidden;
+        opacity: 0;
+        background: #1e1e1e;
+
+        @include mobile-small{
+            overflow: hidden;
+        }
+
+        &::before{ 
+            content: '';
+            width: 100px; height: 100px;
+            position: absolute;
+            top: 0;right: 0;
+            background: #06c755;
+            transform: scale(0);
+            border-radius: 50%;
+            transition: 1s;
+        }
+    
+        &.active{visibility: visible;
+        opacity: 1;
+            &::before{
+                transform: scale(50);
+            }
+        } 
+    
+       
+    
+        .bottom-menu{
+            position: relative;
+            z-index: 200;
+            padding-top: 160px;
+            display: flex;
+
+            @include mobile-small{
+                position: absolute;
+                left: 80px;
+            }
+        }
+        .service-area{display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            z-index: 50;
+
+            .info-list{
+                margin-bottom: 125px;
+
+                @include tablet{
+                    display: none;
+                }
+            }
+            .info-item{display: flex;
+                flex: 1 1 40%;
+                flex-direction: column;
+                &+.info-item{margin-top: 24px;}
+                
+                .sort{color:#f7f8f9;
+                    font-size: 14px;
+                    
+                    line-height: 21px;
+                    font-weight: 400;
+                    margin-bottom: 6px;
+                }
+                .desc{font-size: 19px;
+                    line-height: 25px;
+                    width: fit-content;
+                    font-weight: 600;
+                }
+            }
+    
+            .trans-box{display: flex;
+
+                @include mobile{
+                    right: 55%;
+                }
+                @include tablet{
+                    position: absolute;
+                    bottom: -100px; right: 60%;
+                }
+                .btn-trans{width: 50px;
+                    height: 50px;
+                    font-weight: 800;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 50%;
+                    justify-content: center;
+                    color: #f7f8f9;
+                    text-transform: uppercase;
+                    transition: .5s cubic-bezier(.25,.74,.22,.99);
+                    transition-property: background-color,color;
+                    margin-right: 10px;
+
+                    &:hover{
+                        opacity: 0.9;
+                     }
+                    
+                    &.color{background: #1e1e1e; 
+                        color:#fff;
+                    }
+                }
+            }
+    
+            .sns-box{margin-top: 42px;
+                display: flex;
+                align-items: center;
+                flex-shrink: 0;
+                @include tablet{
+                    position: absolute;
+                    bottom: -90px; right: 40%;
+                }
+                @include mobile{
+                    right: 32%;
+                }
+                @include mobile-small{
+                    right: 10%;
+                }
+                .sns-icon{
+    
+                    img{width: 28px;
+                        height: 28px;
+                        display: block;
+                        fill:#fff;
+                    }
+                    &+.sns-icon{margin-left: 24px;}
+                    &:hover{
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+    
+        .menu-area{margin-left: 170px;
+            z-index: 50;
+            color : #f7f8f9;
+
+            @include tablet{
+                margin: 0 auto;                
+            }
+            .menu-list{}
+            .menu-item{
+                &+.menu-item{margin-top: 25px;}
+            }
+            .menu-txt{font-size: 46px;
+                line-height: 53px;
+                font-weight: 800;
+                width: fit-content;
+                @include mobile-small{
+                    line-height: 20px;
+                    font-size: 30px; 
+                }
+
+                &:hover{
+                    opacity: 0.8;
+                }
+                
+
+                &.color{color : #1e1e1e;}
+            }
+        }
+    }
+}

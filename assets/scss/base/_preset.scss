@@ -1,0 +1,24 @@
+body{font-size: 14.5px;
+    line-height: 22px;
+    font-family: 'Pretendard','Nekst', sans-serif;
+    color: #1e1e1e; 
+    background: #f7f8f9;
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    &.active{overflow: hidden;}
+}
+
+.blind{position: absolute;
+    width: 1px; height: 1px; 
+    overflow: hidden; 
+    clip: rect(0 0 0 0); 
+    margin: -1px;}
+
+.inner{
+    max-width: 1200px;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+

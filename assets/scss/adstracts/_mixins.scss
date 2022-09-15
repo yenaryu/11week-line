@@ -1,0 +1,61 @@
+/* 미디어쿼리 */
+$mobile: 767px; //모바일사이즈
+$mobile-small: 450px; //모바일사이즈
+$tablet: 1023px; // 태블릿사이즈 
+$desktop: 1200px; //pc사이즈 
+
+$desktop-large: 1196px;
+
+
+@mixin mobile-small{
+  @media (max-width: $mobile-small){
+    @content;
+  }
+}
+/*반응형, 브라우저 크기가 767px 이하일때*/
+@mixin mobile{
+  @media (max-width: $mobile){
+    @content;
+  }
+}
+
+/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
+@mixin tablet{
+  @media (max-width: $tablet){
+    @content;
+  }
+}
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+@mixin desktop{
+  @media (max-width: $desktop){
+    @content;
+  }
+}
+
+@mixin desktop-large{
+  @media (max-width: $desktop-large){
+    @content;
+  }
+}
+
+
+
+
+/* 말줄임소스 */
+@mixin elip{
+  display: block; 
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+  overflow: hidden;
+}
+
+@mixin elip-multi($line,$lineHeight){ 
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  line-height: $lineHeight; 
+  max-height: $lineHeight*$line; 
+  -webkit-box-orient: vertical; 
+  -webkit-line-clamp: $line; 
+  display: -webkit-box; 
+}
