@@ -115,17 +115,18 @@ ScrollTrigger.matchMedia({
       scrollTrigger:{
           trigger:".sc-effect02", 
           start:"0% 0%",
-          end:"+=500%",
+          end:"+=700%",
           scrub: 5,
-          pin : true
+          pin : true,
       },
     })
     effect02.addLabel('eff2')
     .to('.sc-effect02 .effect-top.one',{xPercent:50},'eff2')
     .to('.sc-effect02 .effect-top.two',{xPercent:-50},'eff2')
-    .to('.box-area',{ left:'-150%'},'eff2')
+    .to('.box-area',{ left:'-200%'},'eff2')
     
   },
+  
  
   });
 
@@ -176,7 +177,7 @@ gsap.from('.sc-news',{
 
  /* sc-news swiper */
  var newsSlide = new Swiper(".sc-news .swiper", {
-  slidesPerView: 2.1, 
+  slidesPerView: 2, 
   // spaceBetween: 20,
 });
 

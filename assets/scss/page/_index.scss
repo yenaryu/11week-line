@@ -5,6 +5,10 @@
     background: #06c755;
     z-index: 500;
 
+    @include mobile-small{
+        opacity: 0; visibility: hidden;
+      }
+
     .load-img{
         position: absolute;
         top: 50%;
@@ -263,6 +267,7 @@
                 text-align: center;
                 font-size: 30px;
                 margin-top: 20px;
+                margin-right: 20px;
             }
             }
         .desc1{margin-top: 12px; @include elip; font-weight: 500;
@@ -271,12 +276,22 @@
                 text-align: center;
                 margin-top: 20px;
             }
+            @include mobile-small{
+                text-align: center;
+                margin-top: 20px;
+                margin-right: 20px;
+            }
             }
         .desc2{margin-top: 28px; @include elip-multi(3,28px);
             
             @include mobile{
                 text-align: center;
                 margin-bottom: 10px;
+            }
+            @include mobile-small{
+                text-align: center;
+                margin-top: 20px;
+                margin-right: 20px;
             }
         }
     }
@@ -491,6 +506,10 @@
 /* news */
 .sc-news{
     margin-bottom: 140px;
+    @include mobile-small{
+        overflow: hidden;
+        
+    }
     .swiper{
         left: -90px;
         overflow: visible;
@@ -507,11 +526,18 @@
                 margin-left: 100px;
                 
             }
+            @include mobile-small{
+            padding:0px 10px;                
+            }
 
             &:hover{
             padding: 24px 24px 70px;
                background: #71EB9F;
                border-radius: 10px;
+
+               @include mobile-small{
+                background: #fff;
+               }
             }
 
         .img-box{
@@ -530,6 +556,11 @@
                 }
                 @include mobile{
                     height: 150px;
+                    object-fit: cover;
+                    border-radius: 25px;
+                }
+                @include mobile-small{
+                    height: 100px;
                     object-fit: cover;
                     border-radius: 25px;
                 }
@@ -565,7 +596,7 @@
                 }
                 @include mobile-small{
                    @include elip-multi(2,20px);
-                   width: 120px;
+                   width: 150px;
                 }
             }
         }

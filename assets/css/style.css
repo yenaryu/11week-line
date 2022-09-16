@@ -978,6 +978,7 @@ header .group-menu .bottom-menu {
   header .group-menu .bottom-menu {
     position: absolute;
     left: 80px;
+    top: -20px;
   }
 }
 header .group-menu .service-area {
@@ -1018,16 +1019,22 @@ header .group-menu .service-area .info-item .desc {
 header .group-menu .service-area .trans-box {
   display: flex;
 }
-@media (max-width: 767px) {
-  header .group-menu .service-area .trans-box {
-    right: 55%;
-  }
-}
 @media (max-width: 1023px) {
   header .group-menu .service-area .trans-box {
     position: absolute;
     bottom: -100px;
     right: 60%;
+  }
+}
+@media (max-width: 767px) {
+  header .group-menu .service-area .trans-box {
+    right: 55%;
+  }
+}
+@media (max-width: 450px) {
+  header .group-menu .service-area .trans-box {
+    right: 55%;
+    bottom: -45px;
   }
 }
 header .group-menu .service-area .trans-box .btn-trans {
@@ -1044,6 +1051,14 @@ header .group-menu .service-area .trans-box .btn-trans {
   transition: 0.5s cubic-bezier(0.25, 0.74, 0.22, 0.99);
   transition-property: background-color, color;
   margin-right: 10px;
+}
+@media (max-width: 450px) {
+  header .group-menu .service-area .trans-box .btn-trans {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    margin-right: 20px;
+  }
 }
 header .group-menu .service-area .trans-box .btn-trans:hover {
   opacity: 0.9;
@@ -1072,7 +1087,8 @@ header .group-menu .service-area .sns-box {
 }
 @media (max-width: 450px) {
   header .group-menu .service-area .sns-box {
-    right: 10%;
+    right: 15%;
+    bottom: -42px;
   }
 }
 header .group-menu .service-area .sns-box .sns-icon img {
@@ -1080,6 +1096,12 @@ header .group-menu .service-area .sns-box .sns-icon img {
   height: 28px;
   display: block;
   fill: #fff;
+}
+@media (max-width: 450px) {
+  header .group-menu .service-area .sns-box .sns-icon img {
+    width: 20px;
+    height: 20px;
+  }
 }
 header .group-menu .service-area .sns-box .sns-icon + .sns-icon {
   margin-left: 24px;
@@ -1195,6 +1217,12 @@ header .group-menu .menu-area .menu-txt.color {
   height: 100%;
   background: #06c755;
   z-index: 500;
+}
+@media (max-width: 450px) {
+  .loading {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 .loading .load-img {
   position: absolute;
@@ -1481,6 +1509,7 @@ header .group-menu .menu-area .menu-txt.color {
     text-align: center;
     font-size: 30px;
     margin-top: 20px;
+    margin-right: 20px;
   }
 }
 .sc-service .service-text .desc1 {
@@ -1497,6 +1526,13 @@ header .group-menu .menu-area .menu-txt.color {
     margin-top: 20px;
   }
 }
+@media (max-width: 450px) {
+  .sc-service .service-text .desc1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+}
 .sc-service .service-text .desc2 {
   margin-top: 28px;
   text-overflow: ellipsis;
@@ -1511,6 +1547,13 @@ header .group-menu .menu-area .menu-txt.color {
   .sc-service .service-text .desc2 {
     text-align: center;
     margin-bottom: 10px;
+  }
+}
+@media (max-width: 450px) {
+  .sc-service .service-text .desc2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 20px;
   }
 }
 .sc-service .service-date {
@@ -1770,6 +1813,11 @@ header .group-menu .menu-area .menu-txt.color {
 .sc-news {
   margin-bottom: 140px;
 }
+@media (max-width: 450px) {
+  .sc-news {
+    overflow: hidden;
+  }
+}
 .sc-news .swiper {
   left: -90px;
   overflow: visible;
@@ -1787,10 +1835,20 @@ header .group-menu .menu-area .menu-txt.color {
     margin-left: 100px;
   }
 }
+@media (max-width: 450px) {
+  .sc-news .news-area {
+    padding: 0px 10px;
+  }
+}
 .sc-news .news-area:hover {
   padding: 24px 24px 70px;
   background: #71EB9F;
   border-radius: 10px;
+}
+@media (max-width: 450px) {
+  .sc-news .news-area:hover {
+    background: #fff;
+  }
 }
 .sc-news .news-area .img-box {
   margin-bottom: 24px;
@@ -1811,6 +1869,13 @@ header .group-menu .menu-area .menu-txt.color {
 @media (max-width: 767px) {
   .sc-news .news-area .img-box img {
     height: 150px;
+    object-fit: cover;
+    border-radius: 25px;
+  }
+}
+@media (max-width: 450px) {
+  .sc-news .news-area .img-box img {
+    height: 100px;
     object-fit: cover;
     border-radius: 25px;
   }
@@ -1874,6 +1939,6 @@ header .group-menu .menu-area .menu-txt.color {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     display: -webkit-box;
-    width: 120px;
+    width: 150px;
   }
 }
