@@ -75,6 +75,9 @@
     width: 100%;
     overflow: hidden;
     font-family: 'Nekst';
+    @include mobile{
+        min-height: 70vh;
+      }
 
     .effect-top{
 
@@ -105,6 +108,7 @@
 
 .sc-result{
     margin-bottom: 140px;
+    overflow: hidden;
  
     .group-result{}
     .result-list{display: flex;
@@ -115,20 +119,41 @@
         flex-direction: column;
         justify-content: center;
         margin: 0 20px;
+        @include mobile-small{
+            display: block;
+        }
     &.right{align-self: flex-end;
         .sort{
             align-self: flex-end;
-        }}
+            @include mobile-small{
+                text-align: right;
+            }
+        }
+        
+            .img-box{
+                @include mobile-small{
+                img{ margin-top: 55px;}
+                }
+            }
+            .num{
+                @include mobile-small{position: absolute; top: 30px; right: 0;}
+            }
+          
+        
+    }
         .sort{font-size: 22px;
             line-height: 30px;
             font-weight: 700;
             font-size: clamp(18px,2vw, 22px);}
         .img-area{display: flex;
+            @include mobile-small{
+            flex-direction: column;
+            }
             .img-box{
                 height: 180px; width: 250px;
                 @include mobile-small{
-                    width: 150px;
-                    margin-top: -5px;
+                    width: 200px;
+                    padding-bottom: 30px;
                 }
             }
             img{width: 100%; height: 100%;
@@ -157,6 +182,10 @@
 /* event,news title */
 .group-title{
     margin-bottom: 56px;
+    @include mobile-small{
+      margin-bottom: 0;
+    }
+    
     .sc-title{font-size: 100px;
         line-height: 120px;
         font-weight: 900;
@@ -208,10 +237,13 @@
 /* event */
 .sc-service{padding-top: 160px;
     padding-bottom: 160px;
+    @include mobile-small{
+        padding-top: 0px;
+    }
 
     .group-service{
         @include mobile-small{
-            width: 320px;
+            // width: 320px;
         }
     }
     .service-list{}

@@ -1290,6 +1290,11 @@ header .group-menu .menu-area .menu-txt.color {
   overflow: hidden;
   font-family: "Nekst";
 }
+@media (max-width: 767px) {
+  .sc-effect01 {
+    min-height: 70vh;
+  }
+}
 .sc-effect01 .effect-top {
   display: flex;
   position: relative;
@@ -1318,6 +1323,7 @@ header .group-menu .menu-area .menu-txt.color {
 /* result */
 .sc-result {
   margin-bottom: 140px;
+  overflow: hidden;
 }
 .sc-result .result-list {
   display: flex;
@@ -1331,11 +1337,33 @@ header .group-menu .menu-area .menu-txt.color {
   justify-content: center;
   margin: 0 20px;
 }
+@media (max-width: 450px) {
+  .sc-result .result-item {
+    display: block;
+  }
+}
 .sc-result .result-item.right {
   align-self: flex-end;
 }
 .sc-result .result-item.right .sort {
   align-self: flex-end;
+}
+@media (max-width: 450px) {
+  .sc-result .result-item.right .sort {
+    text-align: right;
+  }
+}
+@media (max-width: 450px) {
+  .sc-result .result-item.right .img-box img {
+    margin-top: 55px;
+  }
+}
+@media (max-width: 450px) {
+  .sc-result .result-item.right .num {
+    position: absolute;
+    top: 30px;
+    right: 0;
+  }
 }
 .sc-result .result-item .sort {
   font-size: 22px;
@@ -1346,14 +1374,19 @@ header .group-menu .menu-area .menu-txt.color {
 .sc-result .result-item .img-area {
   display: flex;
 }
+@media (max-width: 450px) {
+  .sc-result .result-item .img-area {
+    flex-direction: column;
+  }
+}
 .sc-result .result-item .img-area .img-box {
   height: 180px;
   width: 250px;
 }
 @media (max-width: 450px) {
   .sc-result .result-item .img-area .img-box {
-    width: 150px;
-    margin-top: -5px;
+    width: 200px;
+    padding-bottom: 30px;
   }
 }
 .sc-result .result-item .img-area img {
@@ -1384,6 +1417,11 @@ header .group-menu .menu-area .menu-txt.color {
 /* event,news title */
 .group-title {
   margin-bottom: 56px;
+}
+@media (max-width: 450px) {
+  .group-title {
+    margin-bottom: 0;
+  }
 }
 .group-title .sc-title {
   font-size: 100px;
@@ -1439,8 +1477,8 @@ header .group-menu .menu-area .menu-txt.color {
   padding-bottom: 160px;
 }
 @media (max-width: 450px) {
-  .sc-service .group-service {
-    width: 320px;
+  .sc-service {
+    padding-top: 0px;
   }
 }
 .sc-service .service-item {
