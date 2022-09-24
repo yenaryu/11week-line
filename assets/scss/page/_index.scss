@@ -75,6 +75,9 @@
     width: 100%;
     overflow: hidden;
     font-family: 'Nekst';
+    @include mobile-small{
+        min-height: 70vh;
+      }
 
     .effect-top{
 
@@ -105,6 +108,7 @@
 
 .sc-result{
     margin-bottom: 140px;
+    overflow: hidden;
  
     .group-result{}
     .result-list{display: flex;
@@ -211,7 +215,7 @@
 
     .group-service{
         @include mobile-small{
-            width: 320px;
+            // width: 320px;
         }
     }
     .service-list{}
@@ -411,35 +415,58 @@
             height: 315px;
             margin-right: 30px;
         }
-
-        .title{font-size: 40px;
-            line-height: 48px;
-            font-weight: 700;}
-        .info{margin-top: 16px;
-            font-weight: 500;
-            font-size: 16px;
+        .text-area{
+            position: relative;
+            .title{font-size: 40px;
+                line-height: 48px;
+                font-weight: 700;
+                position: absolute;
+                z-index: 50;}
+            .info{margin-top: 16px;
+                font-weight: 500;
+                font-size: 16px;
+                position: absolute;
+                top: 50px;
+                z-index: 50;
+                }
+            .desc{margin-top: 150px;
+                font-size: 12px;
+                font-weight: 300;
+                @include elip-multi(10,20px);
+    
+                @include tablet{
+                    @include elip-multi(5,20px);
+                }
             }
-        .desc{margin-top: 72px;
-            font-size: 12px;
-            font-weight: 300;
-            @include elip-multi(10,20px);
-
-            @include tablet{
-                @include elip-multi(5,20px);
+        }
+        .img-area{
+            img{
+                width: 100%;
+                height: auto;
+                left: 0;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                position: absolute;
+                top: 0;
             }
-            }
+        }
 
         &.one{background: #3E4039;
             color:#f7f8f9;
             top: -50px;
             &:hover{
-                background: url(../image/inter1.png) no-repeat;
-                background-position: center;
-                background-size: 329px;
-                transition: .9s;
-                .title{color:#06c755;}
-                .info{color:#1e1e1e;}
-                .desc{opacity: 0; visibility: hidden;}
+                .img-area{
+                    img{
+                        transition: opacity .9s;
+                        opacity: 1; visibility: visible;
+                    }
+                }
+                .text-area{
+                    .title{color:#06c755;}
+                    .info{color:#1e1e1e;}
+                    .desc{opacity: 0; visibility: hidden;}
+                }
             }
 
         }
@@ -448,10 +475,12 @@
             color: #2c2c2c;
             .title{color: #06c755;}
             &:hover{
-                background: url(../image/inter2.jpg) no-repeat;
-                background-position: center;
-                background-size: 329px;
-                transition: .9s;
+                .img-area{
+                    img{
+                        transition: opacity .9s;
+                        opacity: 1; visibility: visible;
+                    }
+                }
                 .title{color:#1e1e1e;}
                 .info{color:#f7f8f9;}
                 .desc{opacity: 0; visibility: hidden;}
@@ -461,10 +490,12 @@
             color: #f7f8f9;
             top: -50px;
             &:hover{
-                background: url(../image/inter3.png) no-repeat;
-                background-position: center;
-                background-size: 329px;
-                transition: .9s;
+                .img-area{
+                    img{
+                        transition: opacity .9s;
+                        opacity: 1; visibility: visible;
+                    }
+                }
                 .title{color:#06C755;}
                 .info{color:#1e1e1e;}
                 .desc{opacity: 0; visibility: hidden;}

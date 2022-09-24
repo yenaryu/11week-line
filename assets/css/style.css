@@ -1290,6 +1290,11 @@ header .group-menu .menu-area .menu-txt.color {
   overflow: hidden;
   font-family: "Nekst";
 }
+@media (max-width: 450px) {
+  .sc-effect01 {
+    min-height: 70vh;
+  }
+}
 .sc-effect01 .effect-top {
   display: flex;
   position: relative;
@@ -1318,6 +1323,7 @@ header .group-menu .menu-area .menu-txt.color {
 /* result */
 .sc-result {
   margin-bottom: 140px;
+  overflow: hidden;
 }
 .sc-result .result-list {
   display: flex;
@@ -1437,11 +1443,6 @@ header .group-menu .menu-area .menu-txt.color {
 .sc-service {
   padding-top: 160px;
   padding-bottom: 160px;
-}
-@media (max-width: 450px) {
-  .sc-service .group-service {
-    width: 320px;
-  }
 }
 .sc-service .service-item {
   display: flex;
@@ -1678,18 +1679,26 @@ header .group-menu .menu-area .menu-txt.color {
     margin-right: 30px;
   }
 }
-.sc-effect02 .box-item .title {
+.sc-effect02 .box-item .text-area {
+  position: relative;
+}
+.sc-effect02 .box-item .text-area .title {
   font-size: 40px;
   line-height: 48px;
   font-weight: 700;
+  position: absolute;
+  z-index: 50;
 }
-.sc-effect02 .box-item .info {
+.sc-effect02 .box-item .text-area .info {
   margin-top: 16px;
   font-weight: 500;
   font-size: 16px;
+  position: absolute;
+  top: 50px;
+  z-index: 50;
 }
-.sc-effect02 .box-item .desc {
-  margin-top: 72px;
+.sc-effect02 .box-item .text-area .desc {
+  margin-top: 150px;
   font-size: 12px;
   font-weight: 300;
   text-overflow: ellipsis;
@@ -1701,7 +1710,7 @@ header .group-menu .menu-area .menu-txt.color {
   display: -webkit-box;
 }
 @media (max-width: 1023px) {
-  .sc-effect02 .box-item .desc {
+  .sc-effect02 .box-item .text-area .desc {
     text-overflow: ellipsis;
     overflow: hidden;
     line-height: 20px;
@@ -1711,24 +1720,33 @@ header .group-menu .menu-area .menu-txt.color {
     display: -webkit-box;
   }
 }
+.sc-effect02 .box-item .img-area img {
+  width: 100%;
+  height: auto;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+}
 .sc-effect02 .box-item.one {
   background: #3E4039;
   color: #f7f8f9;
   top: -50px;
 }
-.sc-effect02 .box-item.one:hover {
-  background: url(../image/inter1.png) no-repeat;
-  background-position: center;
-  background-size: 329px;
-  transition: 0.9s;
+.sc-effect02 .box-item.one:hover .img-area img {
+  transition: opacity 0.9s;
+  opacity: 1;
+  visibility: visible;
 }
-.sc-effect02 .box-item.one:hover .title {
+.sc-effect02 .box-item.one:hover .text-area .title {
   color: #06c755;
 }
-.sc-effect02 .box-item.one:hover .info {
+.sc-effect02 .box-item.one:hover .text-area .info {
   color: #1e1e1e;
 }
-.sc-effect02 .box-item.one:hover .desc {
+.sc-effect02 .box-item.one:hover .text-area .desc {
   opacity: 0;
   visibility: hidden;
 }
@@ -1740,11 +1758,10 @@ header .group-menu .menu-area .menu-txt.color {
 .sc-effect02 .box-item.two .title {
   color: #06c755;
 }
-.sc-effect02 .box-item.two:hover {
-  background: url(../image/inter2.jpg) no-repeat;
-  background-position: center;
-  background-size: 329px;
-  transition: 0.9s;
+.sc-effect02 .box-item.two:hover .img-area img {
+  transition: opacity 0.9s;
+  opacity: 1;
+  visibility: visible;
 }
 .sc-effect02 .box-item.two:hover .title {
   color: #1e1e1e;
@@ -1761,11 +1778,10 @@ header .group-menu .menu-area .menu-txt.color {
   color: #f7f8f9;
   top: -50px;
 }
-.sc-effect02 .box-item.thr:hover {
-  background: url(../image/inter3.png) no-repeat;
-  background-position: center;
-  background-size: 329px;
-  transition: 0.9s;
+.sc-effect02 .box-item.thr:hover .img-area img {
+  transition: opacity 0.9s;
+  opacity: 1;
+  visibility: visible;
 }
 .sc-effect02 .box-item.thr:hover .title {
   color: #06C755;
