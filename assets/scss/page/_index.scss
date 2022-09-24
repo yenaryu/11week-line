@@ -109,6 +109,9 @@
 .sc-result{
     margin-bottom: 140px;
     overflow: hidden;
+    @include mobile-small{
+        margin-bottom: 0;
+    }
  
     .group-result{}
     .result-list{display: flex;
@@ -161,6 +164,9 @@
 /* event,news title */
 .group-title{
     margin-bottom: 56px;
+    @include mobile-small{
+        margin-bottom: 0px;
+    }
     .sc-title{font-size: 100px;
         line-height: 120px;
         font-weight: 900;
@@ -214,9 +220,6 @@
     padding-bottom: 160px;
 
     .group-service{
-        @include mobile-small{
-            // width: 320px;
-        }
     }
     .service-list{}
     .service-item{display: flex;
@@ -273,6 +276,13 @@
                 margin-top: 20px;
                 margin-right: 20px;
             }
+            @include mobile-small{
+                text-align: center;
+                margin-top: 20px;
+                margin-right: 20px;
+                line-height: 25px;
+                font-size: 25px;
+            }
             }
         .desc1{margin-top: 12px; @include elip; font-weight: 500;
             
@@ -284,6 +294,8 @@
                 text-align: center;
                 margin-top: 20px;
                 margin-right: 20px;
+                line-height: 18px;
+                font-size: 14px;
             }
             }
         .desc2{margin-top: 28px; @include elip-multi(3,28px);
@@ -296,6 +308,8 @@
                 text-align: center;
                 margin-top: 20px;
                 margin-right: 20px;
+                line-height: 18px;
+                font-size: 12px;
             }
         }
     }

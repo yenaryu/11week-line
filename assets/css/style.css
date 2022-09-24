@@ -978,7 +978,7 @@ header .group-menu .bottom-menu {
   header .group-menu .bottom-menu {
     position: absolute;
     left: 80px;
-    top: -20px;
+    top: -30px;
   }
 }
 header .group-menu .service-area {
@@ -1122,6 +1122,11 @@ header .group-menu .menu-area {
 header .group-menu .menu-area .menu-item + .menu-item {
   margin-top: 25px;
 }
+@media (max-width: 450px) {
+  header .group-menu .menu-area .menu-item + .menu-item {
+    margin-top: 18px;
+  }
+}
 header .group-menu .menu-area .menu-txt {
   font-size: 46px;
   line-height: 53px;
@@ -1131,7 +1136,7 @@ header .group-menu .menu-area .menu-txt {
 @media (max-width: 450px) {
   header .group-menu .menu-area .menu-txt {
     line-height: 20px;
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 header .group-menu .menu-area .menu-txt:hover {
@@ -1325,6 +1330,11 @@ header .group-menu .menu-area .menu-txt.color {
   margin-bottom: 140px;
   overflow: hidden;
 }
+@media (max-width: 450px) {
+  .sc-result {
+    margin-bottom: 0;
+  }
+}
 .sc-result .result-list {
   display: flex;
   flex-direction: column;
@@ -1390,6 +1400,11 @@ header .group-menu .menu-area .menu-txt.color {
 /* event,news title */
 .group-title {
   margin-bottom: 56px;
+}
+@media (max-width: 450px) {
+  .group-title {
+    margin-bottom: 0px;
+  }
 }
 .group-title .sc-title {
   font-size: 100px;
@@ -1513,6 +1528,15 @@ header .group-menu .menu-area .menu-txt.color {
     margin-right: 20px;
   }
 }
+@media (max-width: 450px) {
+  .sc-service .service-text .title {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 20px;
+    line-height: 25px;
+    font-size: 25px;
+  }
+}
 .sc-service .service-text .desc1 {
   margin-top: 12px;
   display: block;
@@ -1532,6 +1556,8 @@ header .group-menu .menu-area .menu-txt.color {
     text-align: center;
     margin-top: 20px;
     margin-right: 20px;
+    line-height: 18px;
+    font-size: 14px;
   }
 }
 .sc-service .service-text .desc2 {
@@ -1555,6 +1581,8 @@ header .group-menu .menu-area .menu-txt.color {
     text-align: center;
     margin-top: 20px;
     margin-right: 20px;
+    line-height: 18px;
+    font-size: 12px;
   }
 }
 .sc-service .service-date {
